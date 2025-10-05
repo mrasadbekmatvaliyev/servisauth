@@ -16,6 +16,7 @@ import java.util.List;
 import java.time.LocalDateTime;
 
 @RestController
+@CrossOrigin(origins = "*") // barcha domenlarga ruxsat
 @RequestMapping("/api")
 public class UserController {
     private final UserService userService;
