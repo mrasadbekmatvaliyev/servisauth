@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+# gradle-wrapper.jar va gradlew fayllarini ignore qilmaymiz!
+# gradle-wrapper.jar
+# gradle-wrapper.properties
+# gradlew
+# gradlew.bat
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application
+*.log
+*.db
+*.sqlite
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/

@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'Telegram OTP Auth API'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot web API uchun
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // JPA (ORM uchun)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	implementation 'org.postgresql:postgresql:42.7.3'
+
+    // SQLite uchun JDBC driver
+    implementation 'org.xerial:sqlite-jdbc:3.45.1.0'
+    
+    // SQLite Hibernate dialect
+    implementation 'org.hibernate.orm:hibernate-community-dialects:6.2.13.Final'
+
+    // Lombok for reducing boilerplate code
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // JSON validation (xohlasang foydali)
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // JWT tokenlarini yaratish va tasdiqlash uchun
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+    // Testlar uchun
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
